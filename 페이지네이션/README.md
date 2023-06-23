@@ -115,8 +115,9 @@ npm install -D vite-plugin-eslint eslint eslint-config-react-app
 
 ### 폴더구조
 
+<center>
    <img src="img/fol.png" width="150" height="300"/>
-
+</center>
 <br>
 
 ### 리덕스 사용
