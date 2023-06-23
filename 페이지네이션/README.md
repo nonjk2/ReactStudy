@@ -43,6 +43,9 @@
   <a href="https://github.com/doyoung1002">
       <img src="https://github.com/doyoung1002.png" width="100" height="100"/>
   </a>
+  <a href="https://github.com/Haru-Im">
+      <img src="https://github.com/Haru-Im.png" width="100" height="100"/>
+  </a>
 
 ---
 
