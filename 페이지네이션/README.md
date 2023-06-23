@@ -32,8 +32,8 @@
       <img src="https://github.com/	helloworld442.png" width="100" height="100"/>
   </a>
 
-  <a href="https://github.com/	HyeonE">
-      <img src="https://github.com/	HyeonE.png" width="100" height="100"/>
+  <a href="https://github.com/Hyeon12">
+      <img src="https://github.com/Hyeon12.png" width="100" height="100"/>
   </a>
 
   <a href="https://github.com/nayoung3669">
