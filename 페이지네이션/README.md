@@ -49,6 +49,10 @@
   <a href="https://github.com/taehyunkim3">
       <img src="https://github.com/taehyunkim3.png" width="100" height="100"/>
   </a>
+  <a href="https://github.com/kangsinbeom">
+      <img src="https://github.com/kangsinbeom
+.png" width="100" height="100"/>
+  </a>
 
 ---
 
