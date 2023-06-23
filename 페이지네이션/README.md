@@ -93,6 +93,8 @@ npm install @types/styled-components
 npm install -D vite-plugin-eslint eslint eslint-config-react-app
 ```
 
+vite.config.js
+
 <img src="img/aaa.png" width="400" height="150"/>
 <br>
 .eslintrc
