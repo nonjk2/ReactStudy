@@ -24,44 +24,25 @@
 
 ---
 
-<div style="display:inline-block;text-align:center">
-    <a href="https://github.com/nonjk2">
-        <img src="https://github.com/nonjk2.png" width="100" height="100"/>
-        <br/>
-    </a>
-    은석
-</div>
+  <a href="https://github.com/nonjk2">
+      <img src="https://github.com/nonjk2.png" width="100" height="100"/>
+  </a>
 
-<div style="display:inline-block;text-align:center">
-    <a href="https://github.com/	helloworld442">
-        <img src="https://github.com/	helloworld442.png" width="100" height="100"/>
-        <br/>
-    </a>
-    민승
-</div>
+  <a href="https://github.com/	helloworld442">
+      <img src="https://github.com/	helloworld442.png" width="100" height="100"/>
+  </a>
 
-<div style="display:inline-block;text-align:center">
-    <a href="https://github.com/	HyeonE">
-        <img src="https://github.com/	HyeonE.png" width="100" height="100"/>
-        <br/>
-    </a>
-    소현
-</div>
+  <a href="https://github.com/	HyeonE">
+      <img src="https://github.com/	HyeonE.png" width="100" height="100"/>
+  </a>
 
-<div style="display:inline-block;text-align:center">
-    <a href="https://github.com/nayoung3669">
-        <img src="https://github.com/nayoung3669.png" width="100" height="100"/>
-        <br/>
-    </a>
-    나영
-</div>
-<div style="display:inline-block;text-align:center">
-    <a href="https://github.com/doyoung1002">
-        <img src="https://github.com/doyoung1002.png" width="100" height="100"/>
-        <br/>
-    </a>
-    도영
-</div>
+  <a href="https://github.com/nayoung3669">
+      <img src="https://github.com/nayoung3669.png" width="100" height="100"/>
+  </a>
+
+  <a href="https://github.com/doyoung1002">
+      <img src="https://github.com/doyoung1002.png" width="100" height="100"/>
+  </a>
 
 ---
 
