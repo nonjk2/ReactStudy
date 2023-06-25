@@ -75,7 +75,7 @@ npm init vite
 - [ ] tailwind CSS
 
 ```shell
-npm install react-router-dom styled-components
+npm install react-router-dom styled-components@^5
 ```
 
 ### TypeScript
