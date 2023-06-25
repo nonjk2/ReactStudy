@@ -52,10 +52,12 @@
   <a href="https://github.com/kangsinbeom">
       <img src="https://github.com/kangsinbeom.png" width="100" height="100"/>
   </a>
+
+  <br>
   <a href="https://github.com/khu107">
       <img src="https://github.com/khu107.png" width="100" height="100"/>
   </a>
-
+  
 ---
 
 ## 세팅

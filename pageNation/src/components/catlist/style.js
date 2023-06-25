@@ -4,7 +4,7 @@ export const CatListItemContainer = styled.div`
   position: relative;
   display: flex;
   transition: all 1s;
-  width: 100%;
+  width: 33%;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 30px;
