@@ -53,16 +53,15 @@
       <img src="https://github.com/kangsinbeom.png" width="100" height="100"/>
   </a>
 
-  <br>
   <a href="https://github.com/khu107">
       <img src="https://github.com/khu107.png" width="100" height="100"/>
   </a>
   
 ---
-- [은석 페이지네이션 🔗](react-study-nu.vercel.app)
-- [민승님 페이지네이션 🔗](react-pagingnation.vercel.app)
-- [도영님 페이지네이션 🔗](react-hardstudy.vercel.app)
-- [태현님 페이지네이션 🔗](react-study-pagination.vercel.appResources)
+- [은석 페이지네이션 🔗](https://react-study-nu.vercel.app)
+- [민승님 페이지네이션 🔗](https://react-pagingnation.vercel.app)
+- [도영님 페이지네이션 🔗](https://react-hardstudy.vercel.app)
+- [태현님 페이지네이션 🔗](https://react-study-pagination.vercel.app)
 - [쿠산님 페이지네이션 🔗](https://jocular-choux-a0fbec.netlify.app)
 - [소현님 페이지네이션 🔗](https://silver-homework.vercel.app/)
 ## 세팅
