@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { CatListItemContainer } from "./style";
 
 const CatListItem = ({ item }) => {

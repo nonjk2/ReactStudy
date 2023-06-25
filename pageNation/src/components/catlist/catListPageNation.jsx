@@ -8,7 +8,6 @@ const PageNationSection = React.memo(
     const navigate = useNavigate();
 
     const handleNextPageGroup = () => {
-      console.log("asd");
       const nextPageGroupStart = currentPageGroup * 5 + 1;
       navigate(`/${nextPageGroupStart}`);
     };

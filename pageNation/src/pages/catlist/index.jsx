@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import PageNationSection from "../../components/catlist/catListPageNation";
 
 const TotalPagesPerPage = Math.ceil(10000 / 6 / 5);
+
 const CatList = () => {
   let { page } = useParams();
   page = parseInt(page, 10);

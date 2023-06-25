@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import dotenv from "dotenv";
 const DATA_URI = "https://api.thecatapi.com/v1/images/search";
 const API_KEY =
   "live_lfQTaUxQffCm1GHkyoTZgJAnAbl3x2YPXoXeo9zIqufdrNhtFgzuOcHK0hUIFd99";
@@ -20,6 +20,7 @@ const usePageNation = (page, limit = 6) => {
           params: {
             page: page,
             limit: limit,
+            order: "ASC",
           },
         });
         setCats(response.data);
