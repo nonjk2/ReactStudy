@@ -36,18 +36,20 @@ export const ListHeader = styled.div`
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  a {
+  button {
     max-width: 100%;
     display: inline-block;
     padding: 0.9em 2.1em;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #eee;
+    border: 2px solid #eee;
     border-radius: 100vw;
     background-color: #eee;
     color: #070707;
     font-size: 0.9rem;
     font-weight: 700;
+    :hover {
+      background-color: #070707;
+      color: #eee;
+    }
     p {
       font-size: 1em;
       line-height: 1;
@@ -63,7 +65,45 @@ export const CatListSection = styled.div`
   width: 100%;
   justify-content: space-between;
 `;
+export const Spinner = styled.div`
+  width: 100%;
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loading_spinner_box {
+    margin-left: 3px;
 
+    .loading_spinner {
+      width: 10rem;
+      height: 10rem;
+      border: 1.5px solid #fff;
+      border-top: 3rem solid #fff;
+      border-radius: 50%;
+
+      -webkit-animation: spin 1s linear infinite;
+      animation: spin 1s linear infinite;
+
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+`;
 export const PageNationComponent = styled.div`
   display: flex;
   align-items: center;

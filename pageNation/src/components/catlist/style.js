@@ -3,17 +3,38 @@ import styled from "styled-components";
 export const CatListItemContainer = styled.div`
   position: relative;
   display: flex;
-  width: 33%;
+  transition: all 1s;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 30px;
-
+  translate: none;
+  rotate: none;
+  scale: none;
+  transform: translate3d(0px, 0px, 0px);
   @media only screen and (max-width: 1000px) {
     width: 50%;
   }
+  .loading-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+  }
   .img_div {
+    translate: none;
+    rotate: none;
+    scale: none;
+    transition: all 1s;
+    transform: translate3d(0px, 0px, 0px);
     position: relative;
     width: 100%;
+    max-width: 38em;
+
+    flex: 0 0 auto;
     padding-top: 50%;
     img {
       position: absolute;
@@ -33,8 +54,13 @@ export const CatListItemContainer = styled.div`
     }
   }
   .img_description {
+    translate: none;
+    rotate: none;
+    scale: none;
     justify-content: space-between;
     display: flex;
+    transition: all 1s;
+    transform: translate3d(0px, 0px, 0px);
     flex-direction: column;
     align-items: flex-start;
     .img_title {
