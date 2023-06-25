@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Outlet, Route, Routes } from "react-router-dom";
+import "./App.css";
+import styled from "styled-components";
+import CatList from "./pages/catlist";
+import GlobalStyle from "./utils/globalStyled";
 
+const MainStyle = styled.main`
+  display: block;
+`;
+const Wrapper = styled.section`
+  margin: 0 auto;
+  min-height: 100vh;
+`;
+
+function Layout() {
+  return (
+    <div>
+      <MainStyle>
+        <Wrapper>
+          <Outlet />
+        </Wrapper>
+      </MainStyle>
+    </div>
+  );
+}
+function Nav() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path=":page" element={<CatList />} />
+        <Route index element={<CatList />} />
+      </Route>
+    </Routes>
+  );
+}
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <GlobalStyle />
+      <Nav />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
