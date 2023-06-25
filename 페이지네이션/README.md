@@ -59,7 +59,12 @@
   </a>
   
 ---
-
+- [은석 페이지네이션 🔗](react-study-nu.vercel.app)
+- [민승님 페이지네이션 🔗](react-pagingnation.vercel.app)
+- [도영님 페이지네이션 🔗](react-hardstudy.vercel.app)
+- [태현님 페이지네이션 🔗](react-study-pagination.vercel.appResources)
+- [쿠산님 페이지네이션 🔗](https://jocular-choux-a0fbec.netlify.app)
+- [소현님 페이지네이션 🔗](https://silver-homework.vercel.app/)
 ## 세팅
 
 ### vite로 react 생성
