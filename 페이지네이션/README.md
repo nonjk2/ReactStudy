@@ -102,8 +102,10 @@ npm install -D vite-plugin-eslint eslint eslint-config-react-app
 
 vite.config.js
 
-<img src="img/aaa.png" width="400" height="150"/>
+<img src="https://user-images.githubusercontent.com/85878391/248570502-ca5c0261-23c9-4178-8707-ea20601d5ee8.png" width="400" height="150"/>
+
 <br>
+
 .eslintrc
 대충 본인이 커스텀
 
@@ -138,7 +140,7 @@ vite.config.js
 ### 폴더구조
 
 <center>
-   <img src="img/fol.png" width="150" height="300"/>
+   <img src="https://user-images.githubusercontent.com/85878391/248570511-899c10d5-ff80-4acd-bb3e-896dba8bb383.png" width="150" height="300"/>
 </center>
 <br>
 
