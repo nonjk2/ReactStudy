@@ -8,7 +8,6 @@ const API_KEY =
 const usePageNation = (page = 1, limit = 6) => {
   const [cats, setCats] = useState([]);
   const [loading, setLoading] = useState(false);
-  const postpage = page;
   const [error, setError] = useState(false);
   useEffect(() => {
     const fetchCat = async () => {
@@ -19,7 +18,7 @@ const usePageNation = (page = 1, limit = 6) => {
             "x-api-key": API_KEY,
           },
           params: {
-            page: postpage,
+            page: page,
             limit: limit,
             order: "ASC",
           },
@@ -32,7 +31,7 @@ const usePageNation = (page = 1, limit = 6) => {
       }
     };
     fetchCat();
-  }, [page, limit, postpage]);
+  }, [page, limit]);
 
   return {
     cats,
