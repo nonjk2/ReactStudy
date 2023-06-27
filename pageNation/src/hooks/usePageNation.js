@@ -5,12 +5,10 @@ import { useLocation } from "react-router-dom";
 const DATA_URI = "https://api.thecatapi.com/v1/images/search";
 const API_KEY =
   "live_lfQTaUxQffCm1GHkyoTZgJAnAbl3x2YPXoXeo9zIqufdrNhtFgzuOcHK0hUIFd99";
-const usePageNation = (page, limit = 6) => {
+const usePageNation = (page = 1, limit = 6) => {
   const [cats, setCats] = useState([]);
-  let location = useLocation();
-  let pages = new URLSearchParams(location.search).get("page");
-  const postpage = pages || page;
   const [loading, setLoading] = useState(false);
+  const postpage = page;
   const [error, setError] = useState(false);
   useEffect(() => {
     const fetchCat = async () => {
@@ -34,7 +32,7 @@ const usePageNation = (page, limit = 6) => {
       }
     };
     fetchCat();
-  }, [postpage, limit]);
+  }, [page, limit, postpage]);
 
   return {
     cats,
