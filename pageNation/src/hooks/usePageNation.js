@@ -1,14 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import dotenv from "dotenv";
+import { useLocation } from "react-router-dom";
 const DATA_URI = "https://api.thecatapi.com/v1/images/search";
 const API_KEY =
   "live_lfQTaUxQffCm1GHkyoTZgJAnAbl3x2YPXoXeo9zIqufdrNhtFgzuOcHK0hUIFd99";
 const usePageNation = (page, limit = 6) => {
   const [cats, setCats] = useState([]);
+  let location = useLocation();
+  let pages = new URLSearchParams(location.search).get("page");
+  const postpage = pages || page;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-
   useEffect(() => {
     const fetchCat = async () => {
       setLoading(true);
@@ -18,7 +21,7 @@ const usePageNation = (page, limit = 6) => {
             "x-api-key": API_KEY,
           },
           params: {
-            page: page,
+            page: postpage,
             limit: limit,
             order: "ASC",
           },
@@ -31,7 +34,7 @@ const usePageNation = (page, limit = 6) => {
       }
     };
     fetchCat();
-  }, [page, limit]);
+  }, [postpage, limit]);
 
   return {
     cats,
