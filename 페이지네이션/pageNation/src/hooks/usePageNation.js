@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import dotenv from "dotenv";
-import { useLocation } from "react-router-dom";
 const DATA_URI = "https://api.thecatapi.com/v1/images/search";
 const API_KEY =
   "live_lfQTaUxQffCm1GHkyoTZgJAnAbl3x2YPXoXeo9zIqufdrNhtFgzuOcHK0hUIFd99";

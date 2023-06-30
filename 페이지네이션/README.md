@@ -86,9 +86,6 @@ npm install react-router-dom styled-components@^5
 
 ### TypeScript
 
-- 하면 좋지만 안하는거 추천 끝나고 풀리퀘 코드리뷰할껀데 서로 보기 불편함
-- tsconfig 설정 본인이 알아서
-
 ```shell
 npm install @types/styled-components
 ```
