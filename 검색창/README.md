@@ -6,6 +6,7 @@
   - [디자인 택 1](#디자인-택-1)
   - [검색 API](#검색-api)
   - [vite로 react 생성](#vite로-react-생성)
+  - [Eslint prettier](#eslint-prettier)
   - [CSS 프레임워크 (스타일) 자유](#css-프레임워크-스타일-자유)
   - [완성조건](#완성조건)
   - [시간](#시간)
@@ -85,6 +86,10 @@
 npm init vite
 ```
 
+## Eslint prettier
+
+자유
+
 ## CSS 프레임워크 (스타일) 자유
 
 - [x] styled-components
@@ -92,6 +97,7 @@ npm init vite
 - [x] Styled-jsx
 - [x] Material-UI
 - [x] tailwind CSS
+- [x] SCSS
 
 ## 완성조건
 
