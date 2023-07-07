@@ -4,6 +4,7 @@ const KaKaoconfig = {
   kakaoURL: import.meta.env.VITE_KAKAO_URL,
   kakaoKEY: import.meta.env.VITE_KAKAO_API_KEY,
 };
+
 const useSearch = (inputValue, category) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState();
