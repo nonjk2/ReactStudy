@@ -65,6 +65,12 @@
   <a href="https://github.com/khu107">
       <img src="https://github.com/khu107.png" width="100" height="100"/>
   </a>
+  <a href="https://github.com/gunhoray">
+      <img src="https://github.com/gunhoray.png" width="100" height="100"/>
+  </a>
+  <a href="https://github.com/leolego03">
+      <img src="https://github.com/leolego03.png" width="100" height="100"/>
+  </a>
 
 ## 디자인 택 1
 
