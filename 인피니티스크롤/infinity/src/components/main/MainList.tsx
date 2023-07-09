@@ -51,8 +51,8 @@ const MainList = () => {
   //   preFetch();
   // }, [queryClient, hasNextPage, isFetchingNextPage]);
 
-  const lastPostRef = useInfiniteScroll({ isFetchingNextPage, fetchNextPage, hasNextPage });
   // 내 콘텐츠들
+  const lastPostRef = useInfiniteScroll({ isFetchingNextPage, fetchNextPage, hasNextPage });
 
   const content =
     status === "success" &&
