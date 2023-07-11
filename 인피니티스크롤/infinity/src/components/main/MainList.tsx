@@ -4,6 +4,7 @@ import { useInfiniteQuery } from "react-query";
 import { getDogs } from "../../api/dogs";
 import { DogResponeData } from "../../types/types";
 import useInfiniteScroll from "../../hooks/useInfinityScroll";
+import { createContext, useContext } from "react";
 
 const MainListContainer = styled.div`
   max-width: 83.333%;
