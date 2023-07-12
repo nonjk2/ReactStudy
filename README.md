@@ -1,5 +1,7 @@
 # API 명세서
 
+## 실행커맨드 npm run dev
+
 1. **POST /kakaoLogin**
    - Description: Kakao 계정으로 로그인하는 API입니다. 클라이언트에서 제공된 authorization code를 사용하여 사용자의 토큰을 얻고, 해당 토큰으로 사용자 정보를 가져옵니다. 그 후, MongoDB에 사용자를 저장하고 JWT와 JWT refresh 토큰을 생성합니다.
    - Parameters: `code` (query)
