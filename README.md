@@ -1,76 +1,39 @@
-# TodoServer_Mongo
+# API 명세서
 
-주어진게 json-server라 LV4 까진 json server를 쓰긴 했는데
+1. **POST /kakaoLogin**
+   - Description: Kakao 계정으로 로그인하는 API입니다. 클라이언트에서 제공된 authorization code를 사용하여 사용자의 토큰을 얻고, 해당 토큰으로 사용자 정보를 가져옵니다. 그 후, MongoDB에 사용자를 저장하고 JWT와 JWT refresh 토큰을 생성합니다.
+   - Parameters: `code` (query)
+   - Response: 200 (OK), 사용자 정보와 JWT를 반환합니다. 
+   - Error: 요청이 올바르지 않으면 오류를 반환합니다.
 
-솔직히 이걸로 끝까지 가는건 너무 비효율 적인거 같아 몽고db 서버를 하나 팠습니다...
+2. **POST /naverLogin**
+   - Description: Naver 계정으로 로그인하는 API입니다. 클라이언트에서 제공된 authorization code를 사용하여 사용자의 토큰을 얻고, 해당 토큰으로 사용자 정보를 가져옵니다. 그 후, MongoDB에 사용자를 저장하고 JWT와 JWT refresh 토큰을 생성합니다.
+   - Parameters: `code` (query)
+   - Response: 200 (OK), 사용자 정보와 JWT를 반환합니다. 
+   - Error: 요청이 올바르지 않으면 오류를 반환합니다.
 
-## Todos
-1. **addTodo**
-    - **URI**: `${process.env.REACT_APP_LOCAL_SERVER}/todos`
-    - **Method**: POST
-    - **Description**: 새로운 할 일을 추가합니다.
-    - **Payload**: `newTodo` - 새로 추가될 할 일의 정보를 담은 객체입니다.
+3. **POST /googleLogin**
+   - Description: Google 계정으로 로그인하는 API입니다. 클라이언트에서 제공된 authorization code를 사용하여 사용자의 토큰을 얻고, 해당 토큰으로 사용자 정보를 가져옵니다. 그 후, MongoDB에 사용자를 저장하고 JWT와 JWT refresh 토큰을 생성합니다.
+   - Parameters: `code` (query)
+   - Response: 200 (OK), 사용자 정보와 JWT를 반환합니다. 
+   - Error: 요청이 올바르지 않으면 오류를 반환합니다.
 
-2. **getTodos**
-    - **URI**: `${process.env.REACT_APP_LOCAL_SERVER}/todos`
-    - **Method**: GET
-    - **Description**: 모든 할 일을 가져옵니다.
+4. **GET /usertoken**
+   - Description: 사용자의 JWT를 검증하고 해당 사용자를 반환하는 API입니다.
+   - Authentication: 필요합니다. JWT가 헤더에 포함되어 있어야 합니다.
+   - Response: 200 (OK), 사용자 정보를 반환합니다.
+   - Error: 토큰이 유효하지 않거나 사용자를 찾을 수 없는 경우 오류를 반환합니다.
 
-3. **updateDoneTodo**
-    - **URI**: `${process.env.REACT_APP_LOCAL_SERVER}/todos/{id}`
-    - **Method**: PATCH
-    - **Description**: 할 일의 완료 상태를 업데이트합니다.
-    - **Params**: `id` - 업데이트할 할 일의 ID입니다.
-    - **Payload**: `{done:!(todo.done)}` - 완료 상태를 반전시키는 객체입니다.
+5. **GET /refreshToken**
+   - Description: 사용자의 JWT refresh 토큰을 검증하고 새로운 JWT를 생성하는 API입니다.
+   - Authentication: 필요합니다. JWT refresh 토큰이 쿠키에 포함되어 있어야 합니다.
+   - Response: 200 (OK), 새로운 JWT를 반환합니다.
+   - Error: 토큰이 유효하지 않는 경우 오류를 반환합니다.
 
-4. **updateTodo**
-    - **URI**: `${process.env.REACT_APP_LOCAL_SERVER}/todos/{id}`
-    - **Method**: PATCH
-    - **Description**: 할 일의 내용을 업데이트합니다.
-    - **Params**: `id` - 업데이트할 할 일의 ID입니다.
-    - **Payload**: `{content:sendData.content}` - 할 일의 새로운 내용을 담은 객체입니다.
+6. **POST /user/logout**
+   - Description: 사용자를 로그아웃하고 JWT refresh 토큰을 무효화하는 API입니다.
+   - Response: 쿠키에서 JWT refresh 토큰을 제거하고 'ok'를 반환합니다.
 
-5. **deleteTodo**
-    - **URI**: `${process.env.REACT_APP_LOCAL_SERVER}/todos/{id}`
-    - **Method**: DELETE
-    - **Description**: 특정 할 일을 삭제합니다.
-    - **Params**: `id` - 삭제할 할 일의 ID입니다.
-
-## User
-
-1. **GET /user**: 모든 사용자의 정보를 가져옵니다.
-   - Response: 사용자 정보 배열(JSON)
-
-2. **GET /usertoken**: 모든 사용자의 정보를 가져오기 전에 JWT 토큰을 통한 인증을 수행합니다.
-   - Headers: Authorization: Bearer \<token>
-   - Response: 사용자 정보 배열(JSON)
-
-3. **GET /user/:email**: 주어진 이메일에 해당하는 사용자 정보를 가져옵니다.
-   - Parameters: email (URL 경로에 포함)
-   - Response: 해당 이메일의 사용자 정보(JSON)
-
-4. **POST /user**: 새 사용자를 생성합니다. 이메일, 닉네임, 비밀번호 필요.
-   - Body: email, nickName, password
-   - Response: 생성된 사용자 정보(JSON)
-
-5. **POST /user/login**: 사용자 로그인을 처리합니다. 이메일, 비밀번호 필요.
-   - Body: email, password
-   - Response: 로그인된 사용자 정보와 JWT 토큰(JSON)
-
-6. **POST /user/logout**: 로그인된 사용자를 로그아웃시킵니다.
-   - Response: "ok" (문자열)
-
-7. **PATCH /user/:email/done**: 주어진 이메일의 사용자의 done 상태를 업데이트합니다.
-   - Parameters: email (URL 경로에 포함)
-   - Body: done
-   - Response: 업데이트된 사용자 정보(JSON)
-
-8. **PATCH /user/:email/nickName**: 주어진 이메일의 사용자의 닉네임을 업데이트합니다.
-   - Parameters: email (URL 경로에 포함)
-   - Body: nickName
-   - Response: 업데이트된 사용자 정보(JSON)
-
-9. **DELETE /user/:email**: 주어진 이메일의 사용자를 삭제합니다.
-   - Parameters: email (URL 경로에 포함)
-   - Response: "User successfully deleted" (문자열)
-   
+모든 API는 HTTP 프로토콜을 사용하며 JSON 형식으로 데이터를 주고받습니다. 
+각 API는 클라이언트와 서버 간의 상호작용에 필요한 최소한의 정보만 제공합니다. 
+이 명세서는 각 API의 동작 방식을 기술하며, API를 사용하여 어떤 작업을 수행할 수 있는지를 설명합니다.
