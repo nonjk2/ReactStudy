@@ -1,44 +1,59 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/useRedux";
-import { userSet } from "../../store/slice/userSlice";
+import { UserState, userSet } from "../../store/slice/userSlice";
 
 const SocialAuth = () => {
   const [searchParams] = useSearchParams();
-  // const code = searchParams.get("code");
   const state = searchParams.get("state");
   const code = searchParams.get("code");
+  const token = searchParams.get("access_token");
   const dispatch = useAppDispatch();
   // console.log(code);
-  const dataset = (res: any) => {
+
+  const dataset = (res: any): UserState => {
+    const { data, Accesstoken, token } = res.data;
+    const { name, email, kakao_account, picture, given_name } = data;
     switch (state) {
       case "naver":
         return {
-          id: res.data.data.name,
-          nickname: res.data.data.email || "",
-          token: res.data.token,
+          id: name,
+          nickname: email || "",
+          token: token,
+          tokens: { naver: Accesstoken },
         };
       case "kakao":
         return {
-          id: res.data.data.kakao_account.profile.nickname,
-          nickname: res.data.data.kakao_account.email || "",
-          token: res.data.token,
+          id: kakao_account.profile.nickname,
+          nickname: kakao_account.email || "",
+          token: token,
+          picture: kakao_account.profile.profile_image_url,
+          tokens: { kakao: Accesstoken },
+        };
+      case "google":
+        return {
+          id: given_name,
+          nickname: email || "",
+          token: token,
+          picture: picture,
+          tokens: { google: Accesstoken },
         };
 
       default:
         return {
-          id: res.data.data.name || "",
-          nickname: res.data.data.email || "",
-          token: res.data.token || null,
+          id: name || "",
+          nickname: email || "",
+          token: token || null,
         };
     }
   };
   useEffect(() => {
     const socialfecth = async () => {
+      const codes = code ? code : token;
       await axios
         .post(`http://localhost:3001/${state}`, {
-          code: code,
+          code: codes,
         })
         .then((res) => {
           dispatch(userSet(dataset(res)));

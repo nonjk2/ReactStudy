@@ -83,7 +83,7 @@ module.exports = (app, User) => {
       secure: true,
     });
 
-    return res.status(200).json({ data: userInfoResponse.data, token });
+    return res.status(200).json({ data: userInfoResponse.data, token, Accesstoken: access_token });
   });
 
   ///네이버로그인
@@ -162,7 +162,9 @@ module.exports = (app, User) => {
       secure: true,
     });
 
-    return res.status(200).json({ data: userInfoResponse.data.response, token });
+    return res
+      .status(200)
+      .json({ data: userInfoResponse.data.response, token, Accesstoken: access_token });
   });
 
   //////구글로그인
@@ -173,7 +175,7 @@ module.exports = (app, User) => {
   //////구글로그인
 
   app.post("/google", async (req, res) => {
-    const { code } = req.query; // 클라이언트에서 보낸 code를 받아옵니다.
+    const { code } = req.body; // 클라이언트에서 보낸 code를 받아옵니다.
 
     const response = await axios({
       method: "POST",
@@ -185,7 +187,7 @@ module.exports = (app, User) => {
         grant_type: "authorization_code",
         client_id: `${process.env.GOOGLE_CLIENT_KEY}`,
         client_secret: `${process.env.GOOGLE_CLIENT_SECRET_KEY}`,
-        redirect_uri: "http://localhost:3000/google/callback",
+        redirect_uri: "http://localhost:3000/oauth/google",
         code,
       },
     });
@@ -269,6 +271,20 @@ module.exports = (app, User) => {
       httpOnly: true,
       sameSite: "None",
       secure: true,
+    });
+    res.send("ok");
+  });
+
+  app.post("/user/logout/naver", async (req, res) => {
+    const { token } = req.body;
+
+    await axios.get("https://nid.naver.com/oauth2.0/token", {
+      params: {
+        client_id: `${process.env.NAVER_CLIENT_KEY}`,
+        client_secret: `${process.env.NAVER_CLIENT_SECRET_KEY}`,
+        access_token: token,
+        grant_type: "delete",
+      },
     });
     res.send("ok");
   });

@@ -17,6 +17,9 @@ const SOCIAL_CONFIG = {
   naver_client_id: import.meta.env.VITE_NAVER_CLIENT_KEY,
   naver_redirect_uri: import.meta.env.VITE_NAVER_REDIRENT_URI,
   naver_url: import.meta.env.VITE_NAVER_URL,
+  google_client_id: import.meta.env.VITE_GOOGLE_CLIENT_KEY,
+  google_redirect_uri: import.meta.env.VITE_GOOGLE_REDIRENT_URI,
+  google_url: import.meta.env.VITE_GOOGLE_URL,
 };
 
 const WelcomeContainer = styled.div`
@@ -76,6 +79,10 @@ const Welcome = () => {
     pathname: `${SOCIAL_CONFIG.naver_url}`,
     search: `?client_id=${SOCIAL_CONFIG.naver_client_id}&redirect_uri=${SOCIAL_CONFIG.naver_redirect_uri}&response_type=code&state=naver`,
   };
+  const googleLinkOptions = {
+    pathname: `${SOCIAL_CONFIG.google_url}`,
+    search: `?client_id=${SOCIAL_CONFIG.google_client_id}&redirect_uri=${SOCIAL_CONFIG.google_redirect_uri}&response_type=code&state=google&scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile`,
+  };
   interface socialoption {
     pathname: string;
     search: string;
@@ -103,7 +110,7 @@ const Welcome = () => {
         <div className="login-btn-naver" onClick={() => socialhandler(naverLinkOptions)}>
           <img src={naver} alt="" />
         </div>
-        <div className="login-btn-google">
+        <div className="login-btn-google" onClick={() => socialhandler(googleLinkOptions)}>
           <img src={google} alt="" />
         </div>
       </div>

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useQuery } from "react-query";
 import styled from "styled-components";
 import { useAppSelector } from "../hooks/useRedux";

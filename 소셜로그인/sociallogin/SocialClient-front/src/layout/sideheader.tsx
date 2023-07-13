@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { FaDog } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { TbDog, TbHomeHeart } from "react-icons/tb";
+import { GiSittingDog } from "react-icons/gi";
 const SideBarContainer = styled.div`
   position: fixed;
   left: 0;
@@ -11,6 +12,17 @@ const SideBarContainer = styled.div`
   min-width: 70px;
   z-index: 100;
   height: 60%;
+  .iconbox {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left-color: #000;
+    border-left-width: 0px;
+    border-left-style: solid;
+    transition: all 0.2s;
+  }
   .headerContent {
     border-top-right-radius: 18px;
     border-bottom-right-radius: 18px;
@@ -23,12 +35,12 @@ const SideBarContainer = styled.div`
     width: 80%;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+
     width: 100%;
     height: 100%;
   }
   .icon {
-    color: black;
+    color: rgb(0, 0, 0);
     transition: color 0.3s;
     &:hover {
       color: aqua;
@@ -37,18 +49,39 @@ const SideBarContainer = styled.div`
 `;
 
 const SideHeader = () => {
+  const location = useLocation();
+
+  const linkColor = (path: string) => {
+    const pathStyle =
+      location.pathname === path
+        ? { borderLeftColor: "rgb(83, 171, 230)", borderLeftWidth: "5px" }
+        : {};
+    return pathStyle;
+  };
+
   return (
     <SideBarContainer>
       <div className="headerContent">
-        <Link to={"/"}>
-          <FaDog size={25} className="icon" />
-        </Link>
-        <Link to={"/main/post"}>
-          <TbDog size={25} className="icon" />
-        </Link>
-        <Link to={"/mydog"}>
-          <TbHomeHeart className="icon" size={25} />
-        </Link>
+        <div className="iconbox" style={linkColor("/")}>
+          <Link to={"/"}>
+            <GiSittingDog size={25} className="icon" />
+          </Link>
+        </div>
+        <div className="iconbox" style={linkColor("/main")}>
+          <Link to={"/main"}>
+            <FaDog size={25} className="icon" />
+          </Link>
+        </div>
+        <div className="iconbox" style={linkColor("/main/post")}>
+          <Link to={"/main/post"}>
+            <TbDog size={25} className="icon" />
+          </Link>
+        </div>
+        <div className="iconbox" style={linkColor("/mydog")}>
+          <Link to={"/mydog"}>
+            <TbHomeHeart className="icon" size={25} />
+          </Link>
+        </div>
       </div>
     </SideBarContainer>
   );

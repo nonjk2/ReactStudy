@@ -26,6 +26,7 @@ function Nav() {
         <Route path="/login" element={<Welcome />} />
         <Route path="/oauth" element={<SocialAuth />} />
         <Route path="/oauth/naver" element={<SocialAuth />} />
+        <Route path="/oauth/google" element={<SocialAuth />} />
         {/* <Route></Route> 회원가입*/}
       </Route>
 
