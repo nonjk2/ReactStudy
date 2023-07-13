@@ -9,12 +9,13 @@ module.exports = (app, User) => {
   ///카카오로그이
   ///카카오로그인
 
-  app.post("/kakaoLogin", async (req, res) => {
-    const { code } = req.query; // 클라이언트에서 보낸 code를 받아옵니다.
+  app.post("/kakao", async (req, res) => {
+    const { code } = req.body; // 클라이언트에서 보낸 code를 받아옵니다.
 
     /**
      * 인가코드 보내기
      */
+    console.log(code);
     const response = await axios({
       method: "POST",
       url: "https://kauth.kakao.com/oauth/token",
@@ -24,8 +25,9 @@ module.exports = (app, User) => {
       data: {
         grant_type: "authorization_code",
         client_id: `${process.env.KAKAO_CLIENT_KEY}`,
-        redirect_uri: "http://localhost:3000/kakao/callback",
-        code,
+        redirect_uri: "http://localhost:3000/oauth",
+        code: code,
+        state: "kakao",
       },
     });
 
@@ -90,7 +92,7 @@ module.exports = (app, User) => {
   ///네이버로그인
   ///네이버로그인
 
-  app.post("/naverLogin", async (req, res) => {
+  app.post("/naver", async (req, res) => {
     const { code } = req.body; // 클라이언트에서 보낸 code를 받아옵니다.
 
     /**
@@ -107,7 +109,7 @@ module.exports = (app, User) => {
         client_id: `${process.env.NAVER_CLIENT_KEY}`,
         client_secret: `${process.env.NAVER_CLIENT_SECRET_KEY}`,
         code: code,
-        state: "test",
+        state: "naver",
       },
     });
 
@@ -160,9 +162,7 @@ module.exports = (app, User) => {
       secure: true,
     });
 
-    return res
-      .status(200)
-      .json({ data: userInfoResponse.data.response, token });
+    return res.status(200).json({ data: userInfoResponse.data.response, token });
   });
 
   //////구글로그인
@@ -172,7 +172,7 @@ module.exports = (app, User) => {
   //////구글로그인
   //////구글로그인
 
-  app.post("/googleLogin", async (req, res) => {
+  app.post("/google", async (req, res) => {
     const { code } = req.query; // 클라이언트에서 보낸 code를 받아옵니다.
 
     const response = await axios({
