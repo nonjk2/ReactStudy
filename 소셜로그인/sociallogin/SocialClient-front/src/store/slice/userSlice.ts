@@ -35,6 +35,12 @@ export const userSlice = createSlice({
       state.id = "";
       state.nickname = "";
       state.token = null;
+      state.picture = null;
+      state.tokens = {
+        google: null,
+        kakao: null,
+        naver: null,
+      };
     },
   },
   extraReducers: () => {},

@@ -9,12 +9,20 @@ import { KakaoUnlink, LogOut, NaverLogOut } from "../api/Auth";
 const TestContainer = styled.div`
   display: flex;
   max-width: 800px;
-  flex-direction: column;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  border: 1px solid #000;
-  border-radius: 20px;
+  .Test-Wrraper {
+    border-radius: 20px;
+    height: 60vh;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 3px 14px 0 rgba(74, 58, 255, 0.3), 0 -2px 4px 0 rgba(20, 20, 43, 0.05),
+      0 12px 24px 0 rgba(20, 20, 43, 0.01);
+  }
   button {
     cursor: pointer;
   }
@@ -25,10 +33,10 @@ const TestContainer = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     text-overflow: ellipsis;
-    flex: 1;
+
     white-space: pre-wrap;
     overflow: hidden;
-    gap: 30px;
+    gap: 20px;
     span {
       /* 추가된 속성 */
     }
@@ -40,6 +48,7 @@ const TestContainer = styled.div`
     .imgdiv {
       position: relative;
       height: 50px;
+      min-width: 50px;
     }
     img {
       width: 100%;
@@ -89,19 +98,21 @@ const Test = () => {
   };
   return (
     <TestContainer>
-      <div className="span">
-        <p>이메일</p>
-        <h1>{user.nickname}</h1>
-        <h1>{user.id}</h1>
-        <div className="imgdiv">{user.picture && <img src={user.picture} />}</div>
-      </div>
-      <div>
-        <Button
-          color="red"
-          size="large"
-          title={<>{isLoading ? "로딩중" : "로그아웃하기"}</>}
-          onClick={onLogout}
-        />
+      <div className="Test-Wrraper">
+        <div className="span">
+          <p>이메일</p>
+          <h1>{user.nickname}</h1>
+          <h1>{user.id}</h1>
+          <div className="imgdiv">{user.picture && <img src={user.picture} />}</div>
+        </div>
+        <div>
+          <Button
+            color="red"
+            size="large"
+            title={<>{isLoading ? "로딩중" : "로그아웃하기"}</>}
+            onClick={onLogout}
+          />
+        </div>
       </div>
     </TestContainer>
   );

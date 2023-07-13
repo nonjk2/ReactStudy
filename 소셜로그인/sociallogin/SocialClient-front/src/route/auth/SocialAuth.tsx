@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useAppDispatch } from "../../hooks/useRedux";
+import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
 import { UserState, userSet } from "../../store/slice/userSlice";
+
+import { naverReAuthOptions, socialhandler } from "../../pages/Welcome";
 
 const SocialAuth = () => {
   const [searchParams] = useSearchParams();
@@ -11,17 +13,18 @@ const SocialAuth = () => {
   const token = searchParams.get("access_token");
   const dispatch = useAppDispatch();
   // console.log(code);
-
+  const hasToken = useAppSelector((state) => Boolean(state.user.token));
   const dataset = (res: any): UserState => {
     const { data, Accesstoken, token } = res.data;
-    const { name, email, kakao_account, picture, given_name } = data;
+    const { name, email, kakao_account, picture, given_name, profile_image, nickname } = data;
     switch (state) {
       case "naver":
         return {
-          id: name,
+          id: nickname,
           nickname: email || "",
           token: token,
           tokens: { naver: Accesstoken },
+          picture: profile_image,
         };
       case "kakao":
         return {
@@ -48,6 +51,7 @@ const SocialAuth = () => {
         };
     }
   };
+
   useEffect(() => {
     const socialfecth = async () => {
       const codes = code ? code : token;
@@ -56,6 +60,10 @@ const SocialAuth = () => {
           code: codes,
         })
         .then((res) => {
+          if (state === "naver" && hasToken) {
+            console.log("들어옴");
+            return socialhandler(naverReAuthOptions); // 스위치문으로 3사 전부 관리 해주기
+          }
           dispatch(userSet(dataset(res)));
           localStorage.setItem("accessToken", res.data.token);
           console.log(res);

@@ -20,18 +20,6 @@ export const KakaoUnlink = async (token: string | null | undefined): Promise<Axi
   return response;
 };
 
-export const naverAuthRequest = async (): Promise<AxiosResponse> => {
-  const response = await axios.get("https://nid.naver.com/oauth2.0/authorize", {
-    params: {
-      client_id: SOCIAL_CONFIG.naver_client_id,
-      client_secret: SOCIAL_CONFIG.naver_secret_id,
-      redirect_uri: SOCIAL_CONFIG.naver_redirect_uri,
-      state: "naver",
-      auth_type: "reprompt",
-    },
-  });
-  return response;
-};
 export const LogOut = async (): Promise<AxiosResponse> => {
   const response = await axios.post("http://localhost:3001/user/logout");
   return response;

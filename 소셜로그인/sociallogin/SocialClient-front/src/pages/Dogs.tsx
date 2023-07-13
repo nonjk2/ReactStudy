@@ -20,8 +20,7 @@ const NoNameDogsContainer = styled.div`
   padding: 4rem 30px;
   .cardPaddingDiv {
     display: flex;
-
-    width: 20%;
+    width: 25%;
     padding: 10px;
   }
   .card {
@@ -29,7 +28,7 @@ const NoNameDogsContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0.5rem;
+    padding: 0.3rem;
     background: #f8f3e8;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.2);
     border-radius: 3px;
@@ -80,7 +79,7 @@ const NoNameDogsContainer = styled.div`
 const WaitingDogsContainer = styled.div``;
 const Dogs = () => {
   const user = useAppSelector((state) => state.user.id);
-  const { isLoading, isError, data } = useQuery("getMyDog", () => getMyDogs(user));
+  const { isError, data } = useQuery("getMyDog", () => getMyDogs(user));
   const yesNameDogs = data?.filter((e) => e.title !== "");
   const noNameDogs = data?.filter((e) => e.title === "");
   const navigate = useNavigate();

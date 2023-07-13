@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import useInput from "../hooks/useInput";
 import Input from "../util/input";
 import { useNavigate } from "react-router-dom";
@@ -62,6 +61,30 @@ const WelcomeContainer = styled.div`
     }
   }
 `;
+export const naverReAuthOptions = {
+  pathname: `${SOCIAL_CONFIG.naver_url}`,
+  search: `?client_id=${SOCIAL_CONFIG.naver_client_id}&redirect_uri=${SOCIAL_CONFIG.naver_redirect_uri}&response_type=code&state=naver&auth_type=reprompt`,
+};
+const kakaoLinkOptions = {
+  pathname: `${SOCIAL_CONFIG.kakao_url}`,
+  search: `?client_id=${SOCIAL_CONFIG.kakao_client_id}&redirect_uri=${SOCIAL_CONFIG.kakao_redirect_uri}&response_type=code&state=kakao`,
+};
+const naverLinkOptions = {
+  pathname: `${SOCIAL_CONFIG.naver_url}`,
+  search: `?client_id=${SOCIAL_CONFIG.naver_client_id}&redirect_uri=${SOCIAL_CONFIG.naver_redirect_uri}&response_type=code&state=naver`,
+};
+
+const googleLinkOptions = {
+  pathname: `${SOCIAL_CONFIG.google_url}`,
+  search: `?client_id=${SOCIAL_CONFIG.google_client_id}&redirect_uri=${SOCIAL_CONFIG.google_redirect_uri}&response_type=code&state=google&scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile`,
+};
+interface socialoption {
+  pathname: string;
+  search: string;
+}
+export const socialhandler = (option: socialoption) => {
+  window.location.href = `${option.pathname + option.search}`;
+};
 const Welcome = () => {
   const [nickNameValue, onChangeNickName] = useInput();
   const navigation = useNavigate();
@@ -70,25 +93,6 @@ const Welcome = () => {
     navigation("/main");
     dispatch(userSet({ id: nickNameValue, nickname: nickNameValue, token: "" }));
     // localstorage
-  };
-  const kakaoLinkOptions = {
-    pathname: `${SOCIAL_CONFIG.kakao_url}`,
-    search: `?client_id=${SOCIAL_CONFIG.kakao_client_id}&redirect_uri=${SOCIAL_CONFIG.kakao_redirect_uri}&response_type=code&state=kakao`,
-  };
-  const naverLinkOptions = {
-    pathname: `${SOCIAL_CONFIG.naver_url}`,
-    search: `?client_id=${SOCIAL_CONFIG.naver_client_id}&redirect_uri=${SOCIAL_CONFIG.naver_redirect_uri}&response_type=code&state=naver`,
-  };
-  const googleLinkOptions = {
-    pathname: `${SOCIAL_CONFIG.google_url}`,
-    search: `?client_id=${SOCIAL_CONFIG.google_client_id}&redirect_uri=${SOCIAL_CONFIG.google_redirect_uri}&response_type=code&state=google&scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile`,
-  };
-  interface socialoption {
-    pathname: string;
-    search: string;
-  }
-  const socialhandler = (option: socialoption) => {
-    window.location.href = `${option.pathname + option.search}`;
   };
   return (
     <WelcomeContainer>

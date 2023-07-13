@@ -27,8 +27,8 @@ const SideBarContainer = styled.div`
     border-top-right-radius: 18px;
     border-bottom-right-radius: 18px;
     background-color: #fff;
-    box-shadow: 0 3px 14px 0 rgba(74, 58, 255, 0.03), 0 -2px 4px 0 rgba(20, 20, 43, 0.05),
-      0 12px 24px 0 rgba(20, 20, 43, 0.01);
+    box-shadow: 0 3px 14px 0 rgba(83, 171, 230, 0.109), 0 -2px 4px 0 rgba(83, 171, 230, 0.05),
+      0 12px 24px 0 rgba(83, 171, 230, 0.155);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -54,7 +54,12 @@ const SideHeader = () => {
   const linkColor = (path: string) => {
     const pathStyle =
       location.pathname === path
-        ? { borderLeftColor: "rgb(83, 171, 230)", borderLeftWidth: "5px" }
+        ? {
+            backgroundColor: "rgba(83, 171, 230,0.6)",
+            borderLeftColor: "rgb(83, 171, 230)",
+            borderLeftWidth: "5px",
+            color: "rgb(83, 171, 230)",
+          }
         : {};
     return pathStyle;
   };
