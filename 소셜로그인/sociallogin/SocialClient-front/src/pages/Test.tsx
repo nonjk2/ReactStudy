@@ -129,18 +129,3 @@ export default Test;
 // export default defineConfig(({ mode }) => {
 // return {
 // plugins: [react()],
-// resolve: {
-// alias: [
-// { find: "@common", replacement: path.resolve(__dirname, "src/common") },
-// {
-// find: "@components",
-// replacement: path.resolve(__dirname, "src/commponents"),
-// },
-// { find: "@pages", replacement: path.resolve(__dirname, "src/pages") },
-// { find: "@redux", replacement: path.resolve(__dirname, "src/redux") },
-// { find: "@shared", replacement: path.resolve(__dirname, "src/shared") },
-// { find: "@utils", replacement: path.resolve(__dirname, "src/utils") },
-// ],
-// },
-// };
-// });
