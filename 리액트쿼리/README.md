@@ -48,6 +48,9 @@
   <a href="https://github.com/taehyunkim3">
       <img src="https://github.com/taehyunkim3.png" width="100" height="100" style="border-radius : 999px"/>
   </a>
+  <a href="https://github.com/TheON2">
+      <img src="https://github.com/TheON2.png" width="100" height="100"/>
+  </a>
 
 ## 택 3
 
