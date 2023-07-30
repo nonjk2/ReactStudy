@@ -1,9 +1,7 @@
-## 목차
-
 - [리액트 쿼리](#리액트-쿼리)
   - [개요](#개요)
   - [스터디원🤔](#스터디원)
-  - [패턴 택 1](#패턴-택-1)
+  - [택 3](#택-3)
   - [시간](#시간)
   - [발표내용](#발표내용)
 
@@ -47,8 +45,11 @@
   <a href="https://github.com/kangsinbeom">
       <img src="https://github.com/kangsinbeom.png" width="100" height="100"/>
   </a>
+  <a href="https://github.com/taehyunkim3">
+      <img src="https://github.com/taehyunkim3.png" width="100" height="100"/>
+  </a>
 
-## 패턴 택 1
+## 택 3
 
 리액트쿼리 사용법과 옵션들에 대해 알아보자
 
@@ -77,7 +78,7 @@
    - Initial Query Data 설정 방법
    - Prefetching의 이해 및 활용
 
-5. **useMutation과 관련된 주요 기능 및 v4 변경점**
+5. **useMutation과 관련된 주요 기능 및 v5변경점**
 
    - useMutation 기본 사용법
    - mutate와 mutateAsync 비교
