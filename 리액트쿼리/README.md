@@ -23,7 +23,7 @@
 ---
 
   <a href="https://github.com/nonjk2">
-      <img src="https://github.com/nonjk2.png" width="100" height="100"/>
+      <img src="https://github.com/nonjk2.png" width="100" height="100" />
   </a>
   <a href="https://github.com/helloworld442">
       <img src="https://github.com/helloworld442.png" width="100" height="100"/>
@@ -52,36 +52,48 @@
 
 리액트쿼리 사용법과 옵션들에 대해 알아보자
 
-1. **기본적인 사용법 및 쿼리 데이터 가져오기**
+1. **기본 설정, Devtools, Options**
 
-   - `useQuery`: React Query의 기본 사용법 및 쿼리 작성법
+   - React Query의 설치 및 초기 설정
+   - React Query Devtools의 설치 및 활용 방법
+   - React Query의 주요 옵션들에 대한 이해
+   - React Query의 전반적인 아키텍처와 데이터 흐름에 대한 이해
 
-2. **무한 스크롤 및 페이지네이션**
+2. **useQuery와 관련된 주요 리턴 데이터, 주요 옵션, v4 변경점**
 
-   - `useInfiniteQuery`: 무한 스크롤 등, 페이지네이션이 필요한 쿼리에 대한 처리
-   - 주의점 포함
+   - useQuery 기본 문법
+   - useQuery 주요 리턴 데이터, v4부터의 변화
+   - staleTime과 cacheTime, refetchOnMount, refetchOnWindowFocus, Polling, enabled refetch
 
-3. **데이터 뮤테이션 기본**
+3. **useQuery 고급 기능 및 useQueryClient**
 
-   - `useMutation`: 데이터 변이를 다루는 기본적인 방법
+   - onSuccess, onError, onSettled
+   - select, keepPreviousData, placeholderData
+   - Parallel, Dependent Queries, useQueryClient
 
-4. **뮤테이션 콜백**
+4. **Infinite Queries 및 초기 쿼리 데이터, Prefetching**
 
-   - `useMutation`의 onSuccess, onError, onSettled 콜백 이해 및 활용
+   - Infinite Queries 사용 방법
+   - Initial Query Data 설정 방법
+   - Prefetching의 이해 및 활용
 
-5. **쿼리 리프레쉬 및 캐시 무효화**
+5. **useMutation과 관련된 주요 기능 및 v4 변경점**
 
-   - 리프레쉬에 대한 이해와 활용, 그리고 리패치와의 차이점 파악
-   - `invalidateQueries`: 캐시 무효화 및 새로운 데이터로 갱신하는 방법
+   - useMutation 기본 사용법
+   - mutate와 mutateAsync 비교
+   - cancelQueries 이해 및 활용
 
-6. **쿼리 캐싱**
+6. **쿼리 무효화 및 캐시 데이터 업데이트, Optimistic Update**
 
-   - 캐시에 대한 이해와 쿼리 캐시 이해
-   - 캐시 컨트롤과 캐시 시간 조절
+   - 쿼리 무효화 방법 및 활용
+   - 캐시 데이터 즉시 업데이트 방법
+   - Optimistic Update 이해 및 활용
 
-7. **Prefetching and Lazy Queries**
-   - 데이터 미리 가져오기(prefetching)에 대한 이해 및 활용
-   - 지연된 쿼리(Lazy Queries) 활용 방법
+7. **useQueryErrorResetBoundary, Suspense, Default Query Function 및 React Query와 TypeScript**
+   - useQueryErrorResetBoundary 이해 및 활용
+   - Suspense 모드 활용 방법
+   - Default Query Function 설정 방법
+   - React Query와 TypeScript를 함께 사용하는 방법
 
 [리액트 쿼리 Docs](https://tanstack.com/query/v5/docs/react/overview)
 
