@@ -78,13 +78,13 @@ const googleLinkOptions = {
   pathname: `${SOCIAL_CONFIG.google_url}`,
   search: `?client_id=${SOCIAL_CONFIG.google_client_id}&redirect_uri=${SOCIAL_CONFIG.google_redirect_uri}&response_type=code&state=google&scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile`,
 };
+export const socialhandler = (option: socialoption) => {
+  window.location.href = `${option.pathname + option.search}`;
+};
 interface socialoption {
   pathname: string;
   search: string;
 }
-export const socialhandler = (option: socialoption) => {
-  window.location.href = `${option.pathname + option.search}`;
-};
 const Welcome = () => {
   const [nickNameValue, onChangeNickName] = useInput();
   const navigation = useNavigate();
