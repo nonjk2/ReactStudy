@@ -2,6 +2,13 @@
   - [개요](#개요)
   - [스터디원🤔](#스터디원)
   - [택 3](#택-3)
+    - [1. 기본 설정, Devtools, Options](#1-기본-설정-devtools-options)
+    - [2. useQuery와 관련된 주요 리턴 데이터, 주요 옵션](#2-usequery와-관련된-주요-리턴-데이터-주요-옵션)
+    - [3. useQuery 고급 기능 및 useQueryClient](#3-usequery-고급-기능-및-usequeryclient)
+    - [4. Infinite Queries 및 초기 쿼리 데이터, Prefetching](#4-infinite-queries-및-초기-쿼리-데이터-prefetching)
+    - [5. useMutation과 관련된 주요 기능 및 v5변경점](#5-usemutation과-관련된-주요-기능-및-v5변경점)
+    - [6. 쿼리 무효화 및 캐시 데이터 업데이트, Optimistic Update](#6-쿼리-무효화-및-캐시-데이터-업데이트-optimistic-update)
+    - [7. 기타 특징 및 고급 기능 -](#7-기타-특징-및-고급-기능--)
   - [시간](#시간)
   - [발표내용](#발표내용)
 
@@ -38,8 +45,8 @@
   <a href="https://github.com/doyoung1002">
       <img src="https://github.com/doyoung1002.png" width="100" height="100"/>
   </a>
-  <a href="https://github.com/Haru-Im">
-      <img src="https://github.com/Haru-Im.png" width="100" height="100"/>
+   <a href="https://github.com/makepin2r">
+      <img src="https://github.com/makepin2r.png" width="100" height="100"/>
   </a>
 
   <a href="https://github.com/kangsinbeom">
@@ -56,48 +63,56 @@
 
 리액트쿼리 사용법과 옵션들에 대해 알아보자
 
-1. **기본 설정, Devtools, Options**
+### 1. 기본 설정, Devtools, Options
 
-   - React Query의 설치 및 초기 설정
-   - React Query Devtools의 설치 및 활용 방법
-   - React Query의 주요 옵션들에 대한 이해
-   - React Query의 전반적인 아키텍처와 데이터 흐름에 대한 이해
+- React Query의 설치 및 초기 설정
+- React Query Devtools의 설치 및 활용 방법
+- React Query의 주요 옵션들에 대한 이해
+- React Query의 전반적인 아키텍처와 데이터 흐름에 대한 이해
 
-2. **useQuery와 관련된 주요 리턴 데이터, 주요 옵션, v5 변경점**
+### 2. useQuery와 관련된 주요 리턴 데이터, 주요 옵션
 
-   - useQuery 기본 문법
-   - useQuery 주요 리턴 데이터, v5부터의 변화
-   - staleTime과 cacheTime, refetchOnMount, refetchOnWindowFocus, Polling, enabled refetch
+- **useQuery 기본 문법**
+- useQuery 주요 리턴 데이터, v4부터의 변화
+- staleTime과 cacheTime, refetchOnMount, refetchOnWindowFocus, Polling, enabled refetch
 
-3. **useQuery 고급 기능 및 useQueryClient**
+### 3. useQuery 고급 기능 및 useQueryClient
 
-   - onSuccess, onError, onSettled
-   - select, keepPreviousData, placeholderData
-   - Parallel, Dependent Queries, useQueryClient
+- onSuccess, onError, onSettled
+- select, keepPreviousData, placeholderData
+- Parallel, Dependent Queries, useQueryClient
+- useQuery의 delayQuery 이해 및 활용
 
-4. **Infinite Queries 및 초기 쿼리 데이터, Prefetching**
+### 4. Infinite Queries 및 초기 쿼리 데이터, Prefetching
 
-   - Infinite Queries 사용 방법
-   - Initial Query Data 설정 방법
-   - Prefetching의 이해 및 활용
+- Infinite Queries 사용 방법
+- Initial Query Data 설정 방법
+- Prefetching의 이해 및 활용
 
-5. **useMutation과 관련된 주요 기능 및 v5변경점**
+### 5. useMutation과 관련된 주요 기능 및 v5변경점
 
-   - useMutation 기본 사용법
-   - mutate와 mutateAsync 비교
-   - cancelQueries 이해 및 활용
+- useMutation 기본 사용법
+- mutate와 mutateAsync 비교
+- cancelQueries 이해 및 활용
+- invalidateQueries 이해 및 활용
 
-6. **쿼리 무효화 및 캐시 데이터 업데이트, Optimistic Update**
+### 6. 쿼리 무효화 및 캐시 데이터 업데이트, Optimistic Update
 
-   - 쿼리 무효화 방법 및 활용
-   - 캐시 데이터 즉시 업데이트 방법
-   - Optimistic Update 이해 및 활용
+- Lazy Queries
+- 쿼리 무효화 방법 및 활용
+- 캐시 데이터 즉시 업데이트 방법
+- Optimistic Update 이해 및 활용
 
-7. **useQueryErrorResetBoundary, Suspense, Default Query Function 및 React Query와 TypeScript**
-   - useQueryErrorResetBoundary 이해 및 활용
-   - Suspense 모드 활용 방법
-   - Default Query Function 설정 방법
-   - React Query와 TypeScript를 함께 사용하는 방법
+### 7. 기타 특징 및 고급 기능 -
+
+시간남는분만 하시길 권장
+
+- useQueryErrorResetBoundary 이해 및 활용
+- React Query와 Suspense의 통합 이해 및 활용
+- Default Query Function 이해 및 활용
+- React Query와 TypeScript의 통합 이해 및 활용
+
+이렇게 각 주제를 세분화하면 주제별로 배울 내용이 균등하게 분배되고, 모든 중요한 옵션들에 대해 다룰 수 있을 것입니다.
 
 [리액트 쿼리 Docs](https://tanstack.com/query/v5/docs/react/overview)
 
