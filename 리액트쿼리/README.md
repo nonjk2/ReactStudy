@@ -63,10 +63,10 @@
    - React Query의 주요 옵션들에 대한 이해
    - React Query의 전반적인 아키텍처와 데이터 흐름에 대한 이해
 
-2. **useQuery와 관련된 주요 리턴 데이터, 주요 옵션, v4 변경점**
+2. **useQuery와 관련된 주요 리턴 데이터, 주요 옵션, v5 변경점**
 
    - useQuery 기본 문법
-   - useQuery 주요 리턴 데이터, v4부터의 변화
+   - useQuery 주요 리턴 데이터, v5부터의 변화
    - staleTime과 cacheTime, refetchOnMount, refetchOnWindowFocus, Polling, enabled refetch
 
 3. **useQuery 고급 기능 및 useQueryClient**
