@@ -42,9 +42,6 @@
       <img src="https://github.com/Hyeon12.png" width="100" height="100"/>
   </a>
 
-  <a href="https://github.com/doyoung1002">
-      <img src="https://github.com/doyoung1002.png" width="100" height="100"/>
-  </a>
    <a href="https://github.com/makepin2r">
       <img src="https://github.com/makepin2r.png" width="100" height="100"/>
   </a>
@@ -58,7 +55,9 @@
   <a href="https://github.com/TheON2">
       <img src="https://github.com/TheON2.png" width="100" height="100"/>
   </a>
-
+  <a href="https://github.com/Kang-Gyeongwon">
+      <img src="https://github.com/Kang-Gyeongwon.png" width="100" height="100"/>
+  </a>
 ## 택 3
 
 리액트쿼리 사용법과 옵션들에 대해 알아보자
@@ -72,11 +71,15 @@
 
 ### 2. useQuery와 관련된 주요 리턴 데이터, 주요 옵션
 
+민승 , 신범
+
 - **useQuery 기본 문법**
 - useQuery 주요 리턴 데이터, v4부터의 변화
 - staleTime과 cacheTime, refetchOnMount, refetchOnWindowFocus, Polling, enabled refetch
 
 ### 3. useQuery 고급 기능 및 useQueryClient
+
+도원 , 승현
 
 - onSuccess, onError, onSettled
 - select, keepPreviousData, placeholderData
@@ -85,11 +88,16 @@
 
 ### 4. Infinite Queries 및 초기 쿼리 데이터, Prefetching
 
+태현 , 소현
+
+- useQuery로 infinitequery를 비슷하게 사용법
 - Infinite Queries 사용 방법
 - Initial Query Data 설정 방법
 - Prefetching의 이해 및 활용
 
 ### 5. useMutation과 관련된 주요 기능 및 v5변경점
+
+준호 , 경원
 
 - useMutation 기본 사용법
 - mutate와 mutateAsync 비교
@@ -97,6 +105,8 @@
 - invalidateQueries 이해 및 활용
 
 ### 6. 쿼리 무효화 및 캐시 데이터 업데이트, Optimistic Update
+
+은석 ,
 
 - Lazy Queries
 - 쿼리 무효화 방법 및 활용
