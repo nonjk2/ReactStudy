@@ -216,7 +216,7 @@ queryFn: 데이터를 패치하는 데 사용되는 함수.
 
 ### 3. useQuery 고급 기능 및 useQueryClient
 
-승현 :
+승현 : https://github.com/makepin2r/makepin2r.github.io/blob/main/_posts/2023-07-30-useQueryClient-useQuery.md
 
 - onSuccess, onError, onSettled
 - select, keepPreviousData, placeholderData
