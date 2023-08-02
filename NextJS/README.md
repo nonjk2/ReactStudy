@@ -1,4 +1,4 @@
-# Next.js
+<!-- # Next.js
 
 ## Next.js는 무엇이고 어떤 철학을 가지고 있는가 ?
 
@@ -233,4 +233,4 @@ suspense는
 loading 의 한계
 경로내에 페이지 컴포넌트를 크게 감싸기때문에 중첩 Suspense 구현이 안됌
 
--> 이를 위해서 page 컴포넌트에 내용을 작은 단위로 분리하여 직접 Suspense API 를 사용하면 됌
+-> 이를 위해서 page 컴포넌트에 내용을 작은 단위로 분리하여 직접 Suspense API 를 사용하면 됌 -->
