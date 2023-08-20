@@ -16,7 +16,16 @@ const SocialAuth = () => {
   const hasToken = useAppSelector((state) => Boolean(state.user.token));
   const dataset = (res: any): UserState => {
     const { data, Accesstoken, token } = res.data;
-    const { name, email, kakao_account, picture, given_name, profile_image, nickname } = data;
+    const {
+      name,
+      email,
+      kakao_account,
+      picture,
+      given_name,
+      profile_image,
+      nickname,
+    } = data;
+
     switch (state) {
       case "naver":
         return {
