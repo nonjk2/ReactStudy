@@ -4,13 +4,15 @@
 
 최적화에 대해 알아보자
 
-## 스터디원🤔
-
----
+## 정신적 지주( Management ) -**관리감독** 👿
 
   <a href="https://github.com/seryoungk">
       <img src="https://github.com/seryoungk.png" width="100" height="100"/>
   </a>
+## 스터디원🤔
+
+---
+
   <a href="https://github.com/nonjk2">
       <img src="https://github.com/nonjk2.png" width="100" height="100"/>
   </a>
