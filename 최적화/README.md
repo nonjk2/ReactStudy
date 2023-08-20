@@ -53,7 +53,7 @@
 3.
 
 - useTransition
-- useMemo , React.memo
 - servercomponent
+- 이미지 최적화 로드
 
 등등 + 추가해서 알아올것
