@@ -8,6 +8,9 @@
 
 ---
 
+  <a href="https://github.com/seryoungk">
+      <img src="https://github.com/seryoungk.png" width="100" height="100"/>
+  </a>
   <a href="https://github.com/nonjk2">
       <img src="https://github.com/nonjk2.png" width="100" height="100"/>
   </a>
