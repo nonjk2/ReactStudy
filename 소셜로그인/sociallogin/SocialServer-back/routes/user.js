@@ -83,7 +83,9 @@ module.exports = (app, User) => {
       secure: true,
     });
 
-    return res.status(200).json({ data: userInfoResponse.data, token, Accesstoken: access_token });
+    return res
+      .status(200)
+      .json({ data: userInfoResponse.data, token, Accesstoken: access_token });
   });
 
   ///네이버로그인
@@ -164,7 +166,11 @@ module.exports = (app, User) => {
 
     return res
       .status(200)
-      .json({ data: userInfoResponse.data.response, token, Accesstoken: access_token });
+      .json({
+        data: userInfoResponse.data.response,
+        token,
+        Accesstoken: access_token,
+      });
   });
 
   //////구글로그인
