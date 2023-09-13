@@ -81,6 +81,7 @@
 - **커맨드 패턴 (Command Pattern):** 명령을 객체로 캡슐화하는 패턴입니다.
 
 [디자인패턴 사이트 발췌](https://www.patterns.dev/posts)
+[번역사이트](https://patterns-dev-kr.github.io/)
 
 ## 시간
 
